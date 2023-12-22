@@ -1,4 +1,8 @@
-export const servePageHTML = async (routeName) => {
+import { promises } from "fs";
+import path, { dirname } from "path";
+import { fileURLToPath } from "url";
+
+export const ServePageHTML = async (routeName) => {
   const __filename = fileURLToPath(import.meta.url);
   const __dirname = dirname(__filename);
   const route = routeName == "/" ? "src" : "src/routes/" + routeName.slice(1);
